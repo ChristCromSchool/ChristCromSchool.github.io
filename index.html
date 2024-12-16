@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Professional ePortfolio</title>
+    <title>Christian Cromer - Professional ePortfolio</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -32,39 +32,45 @@
         </nav>
     </header>
 
-    <main>
-        <section id="intro">
-            <h1>Welcome to My Professional ePortfolio</h1>
-            <p>Here you will find details about my skills, projects, and achievements in Computer Science. Below is my professional self-assessment and enhancement plan review.</p>
-        </section>
-
+     <main>
         <section>
-            <h2>Enhancement Plan Review</h2>
+            <h2>Professional Self-Assessment</h2>
+            <p>For my ePortfolio, I’ve selected a project from my CS-465 course that demonstrates my ability to design, implement, and enhance a web application. This Angular-based trip management application allows users to view and manage trip information stored in a database. The project includes user authentication, and admin users can add or edit trips through dynamic forms that update the database in real time via HTTP requests using JSON files.</p>
 
-            <section>
-                <h2>If you fulfill your enhancement plans, what specific skills or knowledge will your work demonstrate?</h2>
-                <p>One limitation is that I’m working within the project’s scope and available tools, so I might not explore every aspect of OAuth2’s advanced features. My experience with OAuth2 is also relatively new, so there’s room for improvement as I gain a deeper understanding. Time constraints may limit my ability to refine certain parts of the integration, meaning I might focus on core functions over advanced customizations.</p>
-            </section>
+            <p>When I first built this application about three months ago, the core functionality was in place: users could log in, and admins could edit or add trips. The original authentication system allowed users to log in and access the trip data, and the admin role provided access to the functionality for modifying the database. However, I knew that I could make the application more robust, secure, and user-friendly by adding several enhancements.</p>
 
-            <section>
-                <h2>Are there any gaps relative to the course outcomes?</h2>
-                <p>One potential gap is that this project is focused mainly on security and authentication. It might not fully address outcomes related to collaborative environments or some broader aspects of communication. I’m mainly focusing on technical development rather than teamwork or audience-specific communication. While I’m confident in my project’s alignment with most course objectives, I acknowledge that some areas might be less emphasized.</p>
-            </section>
+            <h3>Adding Testing</h3>
+            <p>The first major improvement I made was adding extensive testing to ensure the application’s reliability. Initially, the application was functional, but I realized that comprehensive testing was necessary to catch potential issues early and ensure the app worked as expected in various scenarios. I used Karma and Jasmine, which integrate seamlessly with Angular, to set up unit tests for the application’s components and services.</p>
 
-            <section>
-                <h2>Are there remaining limitations or weaknesses you may need to address?</h2>
-                <p>One limitation is that I’m working within the project’s scope and available tools, so I might not explore every aspect of OAuth2’s advanced features. My experience with OAuth2 is also relatively new, so there’s room for improvement as I gain a deeper understanding. Time constraints may limit my ability to refine certain parts of the integration, meaning I might focus on core functions over advanced customizations.</p>
-            </section>
+            <p>I focused on testing key features like authentication and trip management. For example, I created a suite of tests for the AuthenticationService, which handled user login and registration. The tests ensured that the authentication process worked correctly and could handle both successful and failed login attempts. I also tested edge cases, such as invalid inputs and network failures, to make sure the app would behave as expected in all situations. This step not only made the app more reliable but also helped me sharpen my skills in error handling and testing.</p>
 
-            <section>
-                <h2>Are there particular questions or concerns that you would like your instructor to address in their response to this plan?</h2>
-                <p>No, I've addressed most issues with the instructor over email, but I would like detailed feedback to make sure I'm on the right path.</p>
-            </section>
+            <h3>Enhancing Authentication with Google OAuth2</h3>
+            <p>Once I had implemented testing, I turned my attention to improving the authentication system. While the original login allowed users to authenticate and access the app, I wanted to add an additional layer of security and convenience by integrating Google OAuth2. This would allow users to log in using their Google accounts, eliminating the need for the app to store passwords.</p>
+
+            <p>I integrated the Google OAuth2 authentication process, which involved using tokens for secure login. The backend was updated to validate these tokens, ensuring that only authorized users could access the app. This change not only improved security but also provided a smoother user experience, as users could log in with their existing Google credentials. This was a significant improvement over the original login system, and it aligned with modern best practices for user authentication.</p>
+
+            <h3>Implementing Search and Pagination</h3>
+            <p>With the core authentication and testing in place, I turned to improving the user experience. One area that needed attention was the search functionality. The app originally allowed users to view trips, but finding specific trips in a large dataset could be time-consuming. To address this, I added a search feature that utilized a Trie (prefix tree) data structure for autocomplete functionality.</p>
+
+            <p>The Trie allows the app to quickly retrieve suggestions based on the user’s input, making the search process faster and more intuitive. I also implemented pagination to handle large datasets more efficiently. Initially, the app loaded all the trip data at once, which could slow down the interface as the dataset grew. With pagination, the app now retrieves only the data needed for the current page, significantly improving performance. Sorting functionality was also added, allowing users to sort trips by name or date, further enhancing the app’s usability.</p>
+
+            <h3>Adding Cart and Stripe Integration</h3>
+            <p>Finally, I added a new feature to the application: a shopping cart and Stripe payment integration. This was a significant expansion of the project’s scope, and it allowed users to select trips and make payments through the Stripe payment gateway.</p>
+
+            <p>The cart functionality was implemented by adding a service that tracked the selected trips, allowing users to view and modify their selections before proceeding to checkout. The Stripe integration involved setting up a secure payment process that allowed users to enter their payment information and complete transactions. This feature required careful attention to security, as sensitive payment data needed to be handled securely and comply with Stripe’s guidelines.</p>
+
+            <h3>Challenges and Future Improvements</h3>
+            <p>Throughout the development process, I faced several challenges, particularly with setting up the correct data structures and ensuring that the app’s different components communicated effectively. For instance, when adding pagination and sorting, I had to carefully manage how data was retrieved from the backend to ensure that only the necessary records were loaded. Additionally, implementing Google OAuth2 authentication required me to learn about token-based authentication and how to securely manage user sessions.</p>
+
+            <p>Looking ahead, I plan to expand the app further by adding additional features, such as an extended database to store more detailed trip information and additional payment options. I also intend to continue improving the app’s security and testing coverage, ensuring that it remains scalable and secure as new features are added.</p>
+
+            <h3>Conclusion</h3>
+            <p>This project demonstrates my ability to take an initial concept and enhance it through iterative improvements. By adding comprehensive testing, improving authentication, optimizing search and pagination, and integrating a payment system, I’ve created a more robust, user-friendly, and secure application. These enhancements reflect my ability to apply algorithmic principles, use modern tools and techniques, and ensure that my applications meet the highest standards of quality and security. This project is a strong example of my skills as a software developer and my commitment to continuous improvement.</p>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Your Name</p>
+        <p>&copy; 2024 Christian Cromer</p>
     </footer>
 
     <script src="assets/js/script.js"></script>
